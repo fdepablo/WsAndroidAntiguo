@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Este fichero contiene todos los elemenentos que seran mostrados al usuario
+    para que interaccione con nuestra aplicacion
+
+    Seria equivalente al HTML en un mundo web o como el ContentPanel De Swing
+
+    Normalmente cada fichero XML esta asociado con una actividad
+
+    Todas las etiquetas que pongamos en este fichero se acabaran convirtiendo
+    en objetos Java. Ej: la etiqueta Button acabará siendo un objeto de tipo Button
+    Además todos estos objetos tendrán una estructura de tipo arbol (como el arbol
+    DOM de HTML)
+
+    La manera que colocara Android los objetos a la vista de nuestros usuarios
+    dependera del layout que estamos usando. Este es el LinearLayout que basicamente
+    coloca los objetos visuales de arriba a abajo
+    -->
+
+    <!--
+        Esta etiqueta sirve para mostrar información al usuario
+
+        Toda etiqueta tiene un ancho y un alto que se puede dar en muchas unidades.
+        Pero tambien es muy habitual el usar dos constantes:
+
+        1- wrap_content -> La longitud sera igual al tamaño del contenido de la caja
+        2- match_parent -> La longitud sera igual al tamaño del objeto padre
+
+        Para poner un identificador (id) tenemos que tenerlo en una carpeta de
+        recursos, en mi caso he creado el fichero "id.xml" dentro de la carpeta "values"
+
+    -->
+    <TextView
+        android:id="@id/texto1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:text="Bienvenidos a nuestra APP :) :)!" />
+
+    <!--
+        Esta etiqueta sirve para mostrar un boton al usuario
+
+        Podemos acceder a los componentes visuales desde la actividad que tenemos
+        asociada con el xml. Normalmente lo haremos a traves de la propiedad "id"
+     -->
+    <Button
+        android:id="@id/botonPulsame"
+        android:text="Pulsame!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="Otro Boton!"
+        android:onClick="cambiarTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <!-- Si ponenemos el id con "@+id/" no hace falta crearlo en ningun fichero
+    de recursos
+
+    Con inputType podemos establecer el teclado que nos aparezca por defecto, en este
+    caso solo numerico
+    -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/textoFactorial"
+        >
+    </EditText>
+
+    <Button
+        android:id="@+id/botonFactorial"
+        android:text="Calcular Factorial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:id="@+id/resultadoFactorial"/>
+
+</LinearLayout>

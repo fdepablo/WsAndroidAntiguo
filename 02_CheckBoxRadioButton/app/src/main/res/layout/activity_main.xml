@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
+    android:paddingBottom="16dp" tools:context=".MainActivity">
+
+    <CheckBox android:id="@+id/cbMarcame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pulsame!"
+        android:checked="false" />
+
+    <CheckBox android:id="@+id/cbMarcame2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pulsame!"
+        android:checked="false" />
+
+    <CheckBox android:id="@+id/cbMarcame3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pulsame!"
+        android:checked="false" />
+
+    <CheckBox android:id="@+id/cbMarcame4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pulsame!"
+        android:checked="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opcion elegida:"
+        android:textSize="18sp"
+        android:id="@+id/tvMensaje"
+        />
+
+    <RadioGroup android:id="@+id/rgGrupo1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RadioButton android:id="@+id/rbOpcion1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="opcion_1" />
+
+        <RadioButton android:id="@+id/rbOpcion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="opcion_2" />
+    </RadioGroup>
+</LinearLayout>

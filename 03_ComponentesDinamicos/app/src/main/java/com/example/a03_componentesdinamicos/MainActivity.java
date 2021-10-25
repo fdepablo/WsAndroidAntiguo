@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
             //El contexto en android se puede sacar de varios
             //sitios:
-            // 1. this
+            // 1. this (Si el objeto extiende del contexto, como una activity)
             // 2. MainActivity.this
             // 3. getApplicationContext()
             // 4. v.getContext()

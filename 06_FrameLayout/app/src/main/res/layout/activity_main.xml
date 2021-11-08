@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.example.a06_framelayout.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos del curso:"
+        android:textSize="18sp"
+        android:id="@+id/textView"
+        android:textStyle="bold"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp" />
+
+    <EditText
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:layout_gravity="start|center_vertical" />
+
+    <EditText
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/editText3"
+        android:hint="Temario"
+        android:layout_gravity="end|center_vertical" />
+
+    <EditText
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/editText2"
+        android:hint="Duración"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        android:id="@+id/button"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="end|bottom" />
+</FrameLayout>

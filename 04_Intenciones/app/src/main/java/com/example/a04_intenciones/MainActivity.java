@@ -11,6 +11,10 @@ import android.widget.EditText;
 
 import com.example.a04_intenciones.modelo.entidad.Usuario;
 
+/*
+En este ejemplo vamos a ver como podemos pasar de una actividad a otra y como
+podemos mandarle información
+ */
 public class MainActivity extends AppCompatActivity {
     private Button botonSiguienteActividad;
     private EditText textoNombreUsuario,textoPasswordUsuario;

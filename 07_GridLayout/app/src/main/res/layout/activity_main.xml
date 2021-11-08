@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:columnCount="4"
+    android:orientation="horizontal" >
+
+    <!--
+    En este caso hemos declarado un GridLayout de 4 columnas que se van poniendo los
+    componentes de manera horizontal.
+
+    Con gravity=fill hacemos que el componente ocupe todas las celdas que pueda
+    -->
+    <EditText
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill"
+        android:inputType="number"
+        android:hint="0"
+        />
+
+    <Button android:text="/" android:layout_marginStart="2dp"/>
+
+    <Button android:text="1" />
+
+    <Button android:text="2" />
+
+    <Button android:text="3" />
+
+    <Button android:text="*" android:layout_marginStart="2dp"/>
+
+    <Button android:text="4" />
+
+    <Button android:text="5" />
+
+    <Button android:text="6" />
+
+    <Button android:text="-" android:layout_marginStart="2dp"/>
+
+    <Button android:text="7" />
+
+    <Button android:text="8" />
+
+    <Button android:text="9" />
+
+    <Button
+        android:layout_rowSpan="3"
+        android:layout_marginStart="2dp"
+        android:layout_gravity="fill"
+        android:text="+" />
+
+    <Button
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill"
+        android:text="0" />
+
+    <Button android:text="00" />
+
+    <Button
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill"
+        android:text="=" />
+
+</GridLayout>

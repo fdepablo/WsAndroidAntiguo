@@ -22,6 +22,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Boton 4"/>
+
     <!--
         Podemos establecer cuanto queremos que ocupe un componente dentro de un linearLayout
         Con el atributo layout_witght del linearlayout establecemos cuanto sería el total.
@@ -32,8 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="100"
-        >
+        android:layout_weight="100">
 
         <Button
             android:layout_width="0dp"
@@ -54,4 +59,6 @@
             android:text="Boton3"
             android:layout_weight="40"/>
     </LinearLayout>
+
+
 </LinearLayout>

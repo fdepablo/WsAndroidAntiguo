@@ -13,7 +13,7 @@
     <!-- Este fichero contiene todos los elemenentos que seran mostrados al usuario
     para que interaccione con nuestra aplicacion
 
-    Seria equivalente al HTML en un mundo web o como el ContentPanel De Swing
+    Seria equivalente al HTML en un mundo web o como el ContentPanel de Swing
 
     Normalmente cada fichero XML esta asociado con una actividad
 
@@ -28,13 +28,14 @@
     -->
 
     <!--
-        Esta etiqueta sirve para mostrar información al usuario
+        La etiqueta  TextView sirve para mostrar información al usuario
 
-        Toda etiqueta tiene un ancho y un alto que se puede dar en muchas unidades.
-        Pero tambien es muy habitual el usar dos constantes:
+        Todos los componentes tiene un ancho y un alto que se puede dar en distintas
+        unidades. Pero tambien es muy habitual usar dos constantes:
 
         1- wrap_content -> La longitud sera igual al tamaño del contenido de la caja
-        2- match_parent -> La longitud sera igual al tamaño del objeto padre
+        2- match_parent -> La longitud sera igual al tamaño del objeto padre. En versiones
+        antiguas de Android se llamaba "fill_parent"
 
         Para poner un identificador (id) tenemos que tenerlo en una carpeta de
         recursos, en mi caso he creado el fichero "id.xml" dentro de la carpeta "values"
@@ -68,15 +69,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <!-- Si ponenemos el id con "@+id/" no hace falta crearlo en ningun fichero
-    de recursos
+    de recursos.
 
-    Con inputType podemos establecer el teclado que nos aparezca por defecto, en este
-    caso solo numerico
+    Con el atributo inputType podemos establecer el teclado que nos aparezca por defecto,
+    en este caso solo numerico
+
+    Con hint hacemos que aparezca un texto que desaparecera cuando tenga el foco
     -->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
+        android:hint="Introduce un numero..."
         android:id="@+id/textoFactorial"
         >
     </EditText>

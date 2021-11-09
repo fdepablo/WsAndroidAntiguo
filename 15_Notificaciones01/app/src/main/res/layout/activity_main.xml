@@ -2,12 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity">
 
     <TextView android:text="Notificación al Menu de Estado"
         android:layout_width="wrap_content"
@@ -15,22 +16,15 @@
         android:textSize="24sp"
         android:textColor="#FF0000"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etMensaje"/>
 
-        <EditText
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/etMensaje"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enviar Notificación"
-            android:onClick="enviarNotificacion"/>
-
-
-    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar Notificación"
+        android:onClick="enviarNotificacion"/>
 
 </LinearLayout>

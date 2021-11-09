@@ -1,19 +1,33 @@
-package com.example.felix.p13_notificaciones_01;
+package com.example.a15_notificaciones01;
 
-import android.app.Notification;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
+/*
+El framework de Android nos provee de las clases
+    NotificationManagerCompat, NotificationCompat y NotificationChannel
+para instanciar a las notificaciones y mostrarlas.
 
+En esencia, ensamblamos el código con las siguientes participaciones:
+
+    1. Crear y registrar un canal de notificaciones (NotificationChannel),
+    esto es obligatorio desde Android 8.0
+    2. Crear la notificación (NotificationCompat.Builder)
+    3. Mostrar la notificación con NotificationManagerCompat.notify()
+
+Mas informacion: https://developer.android.com/training/notify-user/build-notification?hl=es-419
+ */
 public class MainActivity extends AppCompatActivity {
 
-    EditText etMensaje;
-    public final static String MENSAJE = "mensaje";
+    private EditText etMensaje;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,47 +35,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         etMensaje = (EditText)findViewById(R.id.etMensaje);
+        createNotificationChannel();
+    }
+
+    /*
+    Desde Android 8.0 (API 26) es necesario incluir el registro de canales de
+    notificaciones para configurar su estilo visual y la importancia desde el sistema.
+
+    Los canales son representados por la clase NotificationChannel e instanciamos
+    sus objetos con el método createNotificationChannel().
+
+    Este metodo crea dicho canal
+    */
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("1234", "CanalNotificacion", importance);
+            channel.setDescription("Canal de prueba");
+            // Registramos el canal en el sistema
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 
     public void enviarNotificacion(View v){
-        //Establecemos a que actividad queremos ir cuando pulse la notificación
-        Intent intent = new Intent(this, NotificacionActivity.class);
-        //Add todos los parametros que queramos añadir
-        intent.putExtra(MENSAJE,etMensaje.getText().toString());
-        //Con el pedingIntent permitimos a una aplicacion que no es la nuestra
-        //usar nuestros permisos de aplicacion para ejecutar una pieza predefinida
-        //de nuestro codigo, en este caso la aplicacion sera NotificationManager
-        //Además, especifica que la accion va a ser tomada en el futuro, una intención
-        //futura que otras aplicaciones pueden usar
-        //Los parametros son:
-        //1 - Contexto
-        //2 - Codigo, codigo de peticion privaro para la aplicacion que mandara la
-        // intencion, en este caso NotificationManager
-        //3 - intent que queremos mandar con la información
-        //4 - flags, con FLAG_UPDATE_CURRENT, en caso de que exista ya este pendin intent
-        //los extras del intent seran reemplazados por el ultimo
-        PendingIntent pIntent = PendingIntent.getActivity(this,
-                                43434344,
-                                intent,
-                                PendingIntent.FLAG_UPDATE_CURRENT);
-
-        // Construimos la notificacion
-        Notification notificacion  = new Notification.Builder(this)
+        //Pedimos el canal creado anteriormente
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "1234")
+                .setSmallIcon(R.drawable.ic_launcher_background)
                 .setContentTitle("Notificacion")
                 .setContentText("Mensaje: " + etMensaje.getText().toString())
-                .setSmallIcon(R.drawable.ic_stat_name)
-                .setContentIntent(pIntent)//Metemos la intención
-                .setAutoCancel(true)//Cuando la tocamos, se elimina
-                .build();
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
-        NotificationManager notificationManager =
-                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-
-        //Le pasamos el identificador de notificación
-        final int idNotificacion = 1;
-        notificationManager.notify(idNotificacion, notificacion);
-
+        // Notificacion id deberia de ser unico por cada notificacion
+        int notificationId = 1;
+        notificationManager.notify(notificationId, builder.build());
     }
-
 }

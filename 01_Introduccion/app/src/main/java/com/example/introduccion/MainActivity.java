@@ -43,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
         //encontro el el fichero activity_main.xml.
         //Pero si nosotros queremos trabajar con dichos objetos tendremos que
         //de alguna manera acceder al dicho objeto, es decir, queremos que android
-        //nos inyecte un objeto que tenga creado. Este concepto se llama inyeccion
-        //de dependencias
+        //nos inyecte un objeto que tenga creado.
         //Normalmente le diremos a Android que queremos acceder a un objeto a traves
         //de su "id" usando para ello la funcion findElementById, pasandole el id
         //que queremos que nos inyecte

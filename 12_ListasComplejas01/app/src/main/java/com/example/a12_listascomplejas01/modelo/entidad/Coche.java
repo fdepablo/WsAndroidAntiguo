@@ -1,4 +1,4 @@
-package com.example.felix.p02_adaptadores_02.modelo;
+package com.example.a12_listascomplejas01.modelo.entidad;
 
 
 public class Coche {

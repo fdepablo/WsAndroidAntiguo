@@ -1,4 +1,4 @@
-package com.example.felix.p02_adaptadores_02.adaptadores;
+package com.example.a12_listascomplejas01.modelo.adaptador;
 
 
 import android.app.Activity;
@@ -8,20 +8,28 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.felix.p02_adaptadores_02.modelo.Coche;
+
+import com.example.a12_listascomplejas01.modelo.entidad.Coche;
 
 import java.util.List;
 
+/*
+Implementamos un adaptador extendiendo de BaseAdapter ya que el ArrayAdapter
+no nos vale.
+
+Este adaptador se encargará de hacer de puente entre el modelo de datos y
+el ListView
+ */
 public class AdaptadorCoches extends BaseAdapter{
 
-    Activity activity;
-    int layout;
-    List<Coche> listado;
+    private Activity activity;
+    private int layout;
+    private List<Coche> listado;
 
-    public AdaptadorCoches(Activity activity, int layout, List<Coche> listado) {
+    public AdaptadorCoches(Activity activity, int layout, List<Coche> lista) {
         this.activity  = activity;
         this.layout = layout;
-        this.listado = listado;
+        this.listado = lista;
     }
 
     //Para saber el tamaño del array adapter
@@ -47,21 +55,27 @@ public class AdaptadorCoches extends BaseAdapter{
         listado.add(coche);
     }
 
+    //para borrar un item de la lista
     public void deleteItem(Coche coche){
         listado.remove(coche);
     }
 
     @Override
     /*
-    getView se llamara cada vez que queramos add un elemento al ListView
-    position: Es la posicion del item que deseamos inflar en la lista.
-    convertView: Representa la instancia donde asignaremos el View creado.
-                La primera vez que es llamado para un elemento especifico su valor sera null,
-                debido a que aun no existe el view para esa fila de lista,
-                pero una vez es haya sido creado ya se quedará ese view asociado
-                a esa fila, por lo que normalmente debemos evitar volver a inflarlo,
-                ya que esto consumiria procesamiento extra.
-    parent: View padre donde se asignara nuestro item, en este caso sera el ListView.
+    El metodo getView se llamara cada vez que queramos add un elemento al ListView.
+    El proceso de agregar una View al xml de una actividad se le conoce como "inflar"
+
+    Podemos encontrar los siguientes parametros de entrada:
+
+    1. position: Es la posicion del item que deseamos inflar en la lista.
+    2. convertView: Representa la instancia donde asignaremos el View creado.
+    La primera vez que es llamado para un elemento especifico su valor sera null
+    debido a que aun no existe el view para esa fila de lista, en ese caso debemos
+    de instanciar el View y rellenar los datos.
+    Una vez es haya sido creado ya se quedará ese view asociado a esa fila, por lo
+    que normalmente debemos evitar volver a inflarlo, ya que esto consumiria
+    procesamiento extra.
+    3. parent: View padre donde se asignara nuestro item, en este caso sera el ListView.
      */
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -73,8 +87,9 @@ public class AdaptadorCoches extends BaseAdapter{
             convertView = inflater.inflate(layout,null);
         }
 
-        //Obteniendo instancias de los text views. R.layout.two_line_list_item (listItemView)
-        //Tiene dos campos por defecto predefinidos (text1, text2)
+        //Obteniendo instancias de los text views.
+        //R.layout.two_line_list_item (listItemView) tiene dos TextView por defecto
+        //predefinidos (text1, text2)
         TextView marca = (TextView)convertView.findViewById(android.R.id.text1);
         TextView modelo = (TextView)convertView.findViewById(android.R.id.text2);
 

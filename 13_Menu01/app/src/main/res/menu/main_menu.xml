@@ -1,4 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
+        Dentro de este fichero podemos encontrar lo siguiente
 
+        <menu>: Representa al menú concreto, actuando como padre de la jerarquía.
+        Puede contener elementos <item> y <group>
+        <item>: Representa un ítem del menú. Puede contener un elemento <menú> para
+        generar un submenú.
+        <group>: Representa un grupo de ítems. Es útil si deseas aplicar las mismas
+        características a un conjunto de ítems.
+
+        Los items tendran que tener el valor id para poder acceder a ellos. Podran
+        tener otros como title, icon, etc.
+
+        ShowAsAction puede tener los siguientes valores
+        1. ifRoom, el ítem se mostrará en la barra solo si hay espacio para proyectarlo.
+        2. always, el item se mostrara en la barra siempre
+        3. never, el item nunca se mostrará en la barra
+    -->
+    <item
+        android:id="@+id/edit_action"
+        android:title="Editar"
+        android:icon="@drawable/ic_baseline_edit_24"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/delete_action"
+        android:title="Borrar"
+        android:icon="@drawable/ic_baseline_delete_24"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/share_action"
+        android:title="Compartir"
+        android:icon="@drawable/ic_baseline_share_24"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/create_pdf_action"
+        android:title="PDF" />
+    <item
+        android:id="@+id/print_action"
+        android:title="Imprimir" />
+    <item
+        android:id="@+id/send_action"
+        android:title="Enviar" />
+
+    <!-- Elementos checked -->
+    <item
+        android:id="@+id/modo_nocturno"
+        android:checkable="true"
+        android:checked="false"
+        android:title="Modo nocturno" />
+
+    <!-- Podemos tener tambien submenu -->
+    <item
+        android:title="Sección">
+        <menu>
+            <item android:id="@+id/op1" android:title="Opción 1" />
+            <item android:id="@+id/op2" android:title="Opción 2" />
+            <item android:id="@+id/op3" android:title="Opción 3" />
+            <item android:id="@+id/op4" android:title="Opción 4" />
+        </menu>
+    </item>
 </menu>

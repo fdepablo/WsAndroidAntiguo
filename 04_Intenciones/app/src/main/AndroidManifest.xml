@@ -14,7 +14,7 @@
         -->
         <activity android:name=".SecondActivity">
             <intent-filter>
-                <action android:name="com.example.turnodetarde.p_intenciones.SegundaActividad" />
+                <action android:name="com.example.a04_intenciones.SecondActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

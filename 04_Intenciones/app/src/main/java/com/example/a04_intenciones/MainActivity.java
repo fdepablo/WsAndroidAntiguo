@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button botonSiguienteActividad;
     private EditText textoNombreUsuario,textoPasswordUsuario;
 
+    //Declaramos las claves de los valores para luego recogerlas en la SecondActivity
     public final static String K_NOMBRE_USUARIO = "nombre_usuario";
     public final static String K_USUARIO = "usuario";
 
@@ -50,12 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,SecondActivity.class);
                 //Si la actividad tiene un intent-filter, podemos lanzar la intención de la siguiente
                 //manera:
-                //Intent intent = new Intent("com.example.turnodetarde.p_intenciones.SecondActivity");
+                //Intent intent = new Intent("com.example.a04_intenciones.SecondActivity");
                 //Esto puede servir para llamar actividades desde diferentes aplicaciones en las que
                 //no tenemos su clase. El intent filter tenemos que añadirlo nosotros
-                //Podriamos hilar más fino asignandole una categoría con el metodo
-                //por si tuvieramos varias actividades con el mismo nombre
-                //intent.addCategory("android.intent.category.DEFAULT");
                 String nombreUsuario = textoNombreUsuario.getText().toString();
                 String passwordUsuario = textoPasswordUsuario.getText().toString();
 

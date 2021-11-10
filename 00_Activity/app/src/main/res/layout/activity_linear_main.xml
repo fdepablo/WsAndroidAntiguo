@@ -4,20 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView android:text="Pagina resultado"
+    <TextView
+        android:id="@id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
+        android:textSize="22sp"
         android:textAlignment="center"
-        android:textSize="30sp"
-        android:textColor="@color/purple_700"/>
+        android:textColor="#6920EB"
+        android:text="Primera app Android"
+        />
 
-    <TextView android:text=""
+    <Button
+        android:id="@id/boton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pulsame!"
+        />
+    <Button
+        android:id="@+id/boton2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        android:id="@+id/tvResultado"/>
+        android:text="Otro boton!"
+        />
 
 </LinearLayout>

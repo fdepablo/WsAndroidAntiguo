@@ -14,13 +14,19 @@ import com.example.a04_intenciones.modelo.entidad.Usuario;
 /*
 En este ejemplo vamos a ver como podemos pasar de una actividad a otra y como
 podemos mandarle información
+
+Para crear una actividad pulsamos boton derecho sobre el paquete que queremos
+y elegimos "Activity". En este caso nos crearia la clase MainActivity, el
+layout asociado y el en AndroidManifest.xml se daría visibilidad al contexto de
+Android.
  */
 public class MainActivity extends AppCompatActivity {
     private Button botonSiguienteActividad;
     private EditText textoNombreUsuario,textoPasswordUsuario;
 
     //Declaramos las claves de los valores para luego recogerlas en la SecondActivity
-    public final static String K_NOMBRE_USUARIO = "nombre_usuario";
+    public final static String K_NOMBRE_USUARIO = "nombre";
+    public final static String K_PASSWORD_USUARIO = "pass";
     public final static String K_USUARIO = "usuario";
 
     @Override
@@ -46,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 // Log.d(String, String) (depuración)
                 // Log.v(String, String) (registro detallado)
 
-                Log.v("MainActivity","Pasando a la siguiente actividad");
+                Log.d("MainActivity","Pasando a la siguiente actividad");
 
                 Intent intent = new Intent(MainActivity.this,SecondActivity.class);
                 //Si la actividad tiene un intent-filter, podemos lanzar la intención de la siguiente
@@ -54,10 +60,12 @@ public class MainActivity extends AppCompatActivity {
                 //Intent intent = new Intent("com.example.a04_intenciones.SecondActivity");
                 //Esto puede servir para llamar actividades desde diferentes aplicaciones en las que
                 //no tenemos su clase. El intent filter tenemos que añadirlo nosotros
+
                 String nombreUsuario = textoNombreUsuario.getText().toString();
                 String passwordUsuario = textoPasswordUsuario.getText().toString();
 
                 intent.putExtra(K_NOMBRE_USUARIO, nombreUsuario);
+                intent.putExtra(K_PASSWORD_USUARIO, nombreUsuario);
 
                 Usuario usuario = new Usuario();
                 usuario.setNombre(nombreUsuario);
@@ -65,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
                 intent.putExtra(K_USUARIO,usuario);
 
+                //Decimos a android que vaya a dicha Activity
                 startActivity(intent);
             }
         });

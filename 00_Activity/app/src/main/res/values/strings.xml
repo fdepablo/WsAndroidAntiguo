@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">00_Activity</string>
+    <string name="mensaje_1">Texto nuevo aplicado!!!</string>
+</resources>

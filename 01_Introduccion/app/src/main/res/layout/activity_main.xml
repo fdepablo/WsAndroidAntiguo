@@ -76,6 +76,17 @@
 
     Con hint hacemos que aparezca un texto que desaparecera cuando tenga el foco
     -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:text="Calcular Factorial"
+        />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

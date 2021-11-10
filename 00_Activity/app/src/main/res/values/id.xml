@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Este fichero lo podemos crear pulsando boton derecho sobre la carpeta values
+        y eligiendo -> new | values resource file
+    -->
+    <item type="id" name="boton1" />
+    <item type="id" name="textView1" />
+</resources>

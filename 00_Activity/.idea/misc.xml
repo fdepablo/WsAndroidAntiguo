@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/vened/Pronoide/20_Material/Android/WsAndroid/01_Introduccion/app/src/main/res/layout/activity.xml" value="0.2234375" />
-        <entry key="..\:/Users/vened/Pronoide/20_Material/Android/WsAndroid/01_Introduccion/app/src/main/res/layout/activity_main.xml" value="0.2234375" />
+        <entry key="..\:/Users/vened/Pronoide/20_Material/Android/WsAndroid/00_Activity/app/src/main/res/layout/activity_linear_main.xml" value="0.2234375" />
+        <entry key="..\:/Users/vened/Pronoide/20_Material/Android/WsAndroid/00_Activity/app/src/main/res/layout/activity_main.xml" value="0.2234375" />
+        <entry key="..\:/Users/vened/Pronoide/20_Material/Android/WsAndroid/00_Activity/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.24375" />
       </map>
     </option>
   </component>

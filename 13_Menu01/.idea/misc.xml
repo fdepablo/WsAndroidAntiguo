@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/vened/Pronoide/20_Material/Android/WsAndroid/13_Menu01/app/src/main/res/drawable/ic_baseline_picture_as_pdf_24.xml" value="0.24375" />
+        <entry key="..\:/Users/vened/Pronoide/20_Material/Android/WsAndroid/13_Menu01/app/src/main/res/layout/activity_main.xml" value="0.2234375" />
         <entry key="..\:/Users/vened/Pronoide/20_Material/Android/WsAndroid/13_Menu01/app/src/main/res/menu/main_manu.xml" value="0.2234375" />
+        <entry key="..\:/Users/vened/Pronoide/20_Material/Android/WsAndroid/13_Menu01/app/src/main/res/menu/main_menu.xml" value="0.2234375" />
       </map>
     </option>
   </component>

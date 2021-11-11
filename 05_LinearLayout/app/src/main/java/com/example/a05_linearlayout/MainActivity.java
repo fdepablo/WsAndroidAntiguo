@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Android, es conveniente usar siempre medidas relativas al tamaño de pantalla de cada uno.
     Esto lo podemos hacer usando:
 
-    1. La medida dip (density-independent pixel ó dp, que al caso es la misma), recomendada para
+    1. La medida dp (density-independent pixel ó dp, que al caso es la misma), recomendada para
     especificar el tamaño de los views en nuestro layout (siendo 160dp el equivalente a una pulgada
     (2,54 cm) de pantalla física)
 

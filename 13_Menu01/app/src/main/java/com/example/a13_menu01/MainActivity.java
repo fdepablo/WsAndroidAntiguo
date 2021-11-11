@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,texto,Toast.LENGTH_SHORT).show();
             return true;
         }else if(id == R.id.modo_nocturno){
-            Toast.makeText(this,"Modo nocturno activado!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Modo nocturno Pulsado!",Toast.LENGTH_SHORT).show();
             item.setChecked(!item.isChecked());
             return true;
         }else if(id == R.id.op1){

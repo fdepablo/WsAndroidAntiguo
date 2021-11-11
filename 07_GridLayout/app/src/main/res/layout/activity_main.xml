@@ -8,9 +8,10 @@
 
     <!--
     En este caso hemos declarado un GridLayout de 4 columnas que se van poniendo los
-    componentes de manera horizontal.
+    componentes de manera horizontal (de izquierda a derecha).
 
-    Con gravity=fill hacemos que el componente ocupe todas las celdas que pueda
+    Con el atributo "layout_gravity=fill" hacemos que el componente ocupe todas las celdas
+    que pueda
     -->
     <EditText
         android:layout_columnSpan="3"

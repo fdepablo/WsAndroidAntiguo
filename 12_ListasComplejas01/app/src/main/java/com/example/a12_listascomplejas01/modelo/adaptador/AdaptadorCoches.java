@@ -32,13 +32,13 @@ public class AdaptadorCoches extends BaseAdapter{
         this.listado = lista;
     }
 
-    //Para saber el tamaño del array adapter
+    //Para saber el tamaño de la lista
     @Override
     public int getCount() {
         return listado.size();
     }
 
-    //para recuperar un item del adaptador
+    //para recuperar un item de la lista
     @Override
     public Object getItem(int position) {
         return listado.get(position);

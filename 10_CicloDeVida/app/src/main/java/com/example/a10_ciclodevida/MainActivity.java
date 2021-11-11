@@ -16,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
     /*
     una actividad puede atravesar los siguientes estados para mantener:
 
-    1. Inexistente
-    2. Detenida
-    3. Pausada
-    4. En marcha
+    1. Inexistente, la actividad no existe
+    2. Detenida, la actividad esta en segundo plano
+    3. Pausada, la actividad pierde el foco del usuario
+    4. En marcha, la actividad tiene el foco del usuario y esta en primer plano
 
     Podemos ver la siguiente tabla para entender mejor los estados de una actividad
 
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d("MainActivity", "onCreate()");
 
-        // Instancias
+        // Obtenemos las instancias(objetos) de las Views
         mNumberAInput = findViewById(R.id.number_a_input);
         mNumberBInput = findViewById(R.id.number_b_input);
         mSumTotalLabel = findViewById(R.id.sum_label);
@@ -216,6 +216,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MainActivity", "onStart()");
     }
 
+
+
     /**
      * Este metodo se ejecuta solo cuando la actividad se ha puesto en el estado Detenida.      *
      * Este es ejecutado antes de onStart() y luego de onStop().     *
@@ -269,6 +271,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * El sistema llama a este método antes de destruir la instancia de la actividad
      * En su interior incluiremos instrucciones de limpieza de recursos asociados
+     *
+     * Ojo, es posible que este metodo no se llegue a ejecutar si android necesita
+     * recursos de memoria para ejecutar otras actividades en primer plano. Es mejor
+     * usar onStop() para guardar datos y no perderlos
      */
     @Override
     protected void onDestroy() {

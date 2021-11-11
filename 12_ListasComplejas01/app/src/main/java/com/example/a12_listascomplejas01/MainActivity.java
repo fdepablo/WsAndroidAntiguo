@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         botonAddCoche = (Button)findViewById(R.id.botonAddCoche);
         lista = (ListView)findViewById(R.id.listaCoches);
 
+        //Creamos unos coches por defecto
         List<Coche> listaCoches = new ArrayList();
         Coche coche = new Coche();
         coche.setId(contador++);
@@ -51,14 +52,16 @@ public class MainActivity extends AppCompatActivity {
 
         listaCoches.add(coche);
 
-        //En este caso no nos vale el array adapter ya que ese adaptador esta
+        //En este caso no nos vale el ArrayAdapter ya que ese adaptador esta
         //pensado para arrays que guarden un solo valor.
+
         //Para ello nos crearemos nuestro propio adaptador
         //El layout que le pasamos a nuestro adaptador esta preparado para
         //mostrar dos elementos uno arriba y en negrita y el otro abajo
         //Podriamos crear nuestro layout personalizado en caso de que lo
         //necesitemos.
         adaptadorCoches = new AdaptadorCoches(this,android.R.layout.two_line_list_item,listaCoches);
+        //Inyectamos el adaptador a la lista
         lista.setAdapter(adaptadorCoches);
 
         //Al pulsar en un elemento de la lista mostramos los datos del coche.
@@ -83,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
                 coche.setMarca(textoMarca.getText().toString());
 
                 adaptadorCoches.addItem(coche);
+                //Siempre que cambiemos la fuente de datos tenemos que
+                //notificarlo a la vista
                 adaptadorCoches.notifyDataSetChanged();
             }
         });

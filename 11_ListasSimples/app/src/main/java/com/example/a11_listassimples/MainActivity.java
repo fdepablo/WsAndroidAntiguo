@@ -14,6 +14,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+Es muy habitual en las aplicaciones el tener un lista de elementos del mismo
+tipo que queremos mostrar de una manera ordenada.
+
+Para este tipo de casos podemos usar de manera basica el componente ListView
+ */
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
@@ -23,26 +29,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = (ListView)findViewById(R.id.listView);
+        listView = findViewById(R.id.listView);
 
         //Obtenemos los paises que hemos declarado en arrays.xml
         final String[] arrayPaises = getResources().getStringArray(
                 R.array.paises);
 
         //Lo convertimos a la clase ArrayList
-        final List<String> arrayListPaises =
-                new ArrayList<>(Arrays.asList(arrayPaises));
+        final List<String> arrayListPaises = new ArrayList<>(Arrays.asList(arrayPaises));
 
-        //Creamos un adaptador para inyectarselo al ListView.
+        //Siempre que trabajemos con listas necesitamos un objeto intermedio
+        //entre la vista y el modelo. En este caso la vista sería ListView
+        //y el modelo seria el arrayListPaises.
+        //Dicho objeto sera un adaptador (Adapter). Asi pues tenemos que
+        //crear un adaptador para inyectarselo al ListView.
 
         //Un adaptador es un objeto de una clase que implementa la interfaz Adapter.
         //Este actúa como un enlace entre un conjunto de datos y un ListView
 
         // El conjunto de datos puede ser cualquier cosa que presente datos en una
-        // manera estructurada. Arreglos, objetos List y objetos Cursor con usados,
+        // manera estructurada. Arreglos, objetos List y objetos Cursor(BBDD) con usados,
         // por lo general, con conjuntos de datos.
 
-        //Un adaptador es responsable por recuperar datos desde un conjunto de datos y
+        //Un adaptador es responsable de recuperar datos desde un conjunto de datos y
         //para generar objetos View mediante esos datos.
         //Los objetos View generados son usados, hasta entonces, para llenar cualquier
         //adaptador vista que esté sujeto al adaptador.
@@ -58,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 arrayListPaises
         );
 
+        //Inyectamos el adaptador a la vista
         listView.setAdapter(arrayStringAdapter);
 
         //Al pulsar simplemente sacamos un Toast con el elemento pulsado

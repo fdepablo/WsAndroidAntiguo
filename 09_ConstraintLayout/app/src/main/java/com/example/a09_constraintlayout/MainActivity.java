@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     todos los atributos de nuestra actividad.
 
     Para este ejemplo vamos a ir a la vista de diseño y crear arrastrando y soltando 2 TextView,
-    2 EditText y 2 botones. Además vamos a situar arriba de la actiivdad el TextView inicial como
+    2 EditText y 2 botones. Además vamos a situar arriba de la actividad el TextView inicial como
     si fuera una cabecera de bienvenida.
 
     Como segundo paso, para cada uno de los componentes que hemos creado debemos de asociar

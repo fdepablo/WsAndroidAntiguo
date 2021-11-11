@@ -9,6 +9,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/*
+Los dialogos son ventanas emergentes que salen encima de las actividades cuyo
+objetivo es interactuar con el usuario de alguna manera.
+
+En este ejemplo tenemos 3 tipos de dialogos:
+
+1. Mostramos un dialogo con un solo boton, sirven para avisar a nuestro usuario
+de algo
+2. Mostramos un dialogo con dos botones, sirven para que el usuario confirme una
+accion.
+3. Mostramos un dialogo para recoger un valor y mostrarlo en actividad.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private Button bDialogoUnBoton;
@@ -29,12 +41,19 @@ public class MainActivity extends AppCompatActivity {
         bDialogoUnBoton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Para crear dialogos se usa la clase AlertDialog.Builder
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("Dialogo de un solo boton");
-                builder.setMessage("Esto es un mensaje!");
+                //Los dialogos en su manera más sencilla tiene un titulo y un mensaje
+                //a mostrar
+                builder.setTitle("Gardar Datos");
+                builder.setMessage("Se han guardado los datos satisfactoriamente!");
+                //Al menos tenemos que incluir un boton de afirmacion
+                //Si no le pasamos ningun listener, por defecto cerramos el dialogo
                 builder.setPositiveButton("Aceptar", null);
 
+                //Instaciamos el objeto
                 AlertDialog dialog = builder.create();
+                //Mostramos al usuario el dialogo
                 dialog.show();
             }
         });
@@ -46,12 +65,17 @@ public class MainActivity extends AppCompatActivity {
                 builder.setTitle("Dialogo de dos botones");
                 builder.setMessage("¿Desea cerrar la aplicacion?");
 
+                //En este caso si que voy a poner un listener al boton, ya que
+                //quiero cerrar la actividad
                 builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         finish();
                     }
                 });
+
+                //Es este caso tambien meto el boton en caso de que no quiera
+                //hacer la accion
                 builder.setNegativeButton("Cancelar", null);
 
                 AlertDialog dialog = builder.create();

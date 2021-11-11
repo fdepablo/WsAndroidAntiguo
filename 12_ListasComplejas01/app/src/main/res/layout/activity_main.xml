@@ -11,8 +11,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bienvenido a la pagina Web"
-        android:textColor="#FF0000"
+        android:text="Bienvenido al concesionario"
+        android:textColor="#9C27B0"
         android:textSize="22sp"
         android:gravity="center"/>
 

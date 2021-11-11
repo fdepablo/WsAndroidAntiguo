@@ -14,10 +14,13 @@
         Los items tendran que tener el valor id para poder acceder a ellos. Podran
         tener otros como title, icon, etc.
 
+        ShowAsAction es una propiedad que dice como queremos que se comporten los items
+        dentro de la barra del menu.
+
         ShowAsAction puede tener los siguientes valores
         1. ifRoom, el ítem se mostrará en la barra solo si hay espacio para proyectarlo.
         2. always, el item se mostrara en la barra siempre
-        3. never, el item nunca se mostrará en la barra
+        3. never, el item nunca se mostrará en la barra, siempre dentro del menu
     -->
     <item
         android:id="@+id/edit_action"
@@ -36,6 +39,8 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/create_pdf_action"
+        android:icon="@drawable/ic_baseline_picture_as_pdf_24"
+        app:showAsAction="ifRoom"
         android:title="PDF" />
     <item
         android:id="@+id/print_action"

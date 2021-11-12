@@ -21,10 +21,10 @@ En esencia, ensamblamos el código con las siguientes participaciones:
     1. Crear y registrar un canal de notificaciones (NotificationChannel),
     esto es obligatorio desde Android 8.0
     2. Crear la notificación (NotificationCompat.Builder)
-    3. Mostrar la notificación con NotificationManagerCompat.notify()
+    3. Mostrar la notificación (NotificationManagerCompat.notify())
 
 Mas informacion: https://developer.android.com/training/notify-user/build-notification?hl=es-419
- */
+*/
 public class MainActivity extends AppCompatActivity {
 
     private EditText etMensaje;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        etMensaje = (EditText)findViewById(R.id.etMensaje);
+        etMensaje = findViewById(R.id.etMensaje);
         createNotificationChannel();
     }
 
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     Este metodo crea dicho canal
     */
     private void createNotificationChannel() {
+        //Preguntando si la version es superior a la 26
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel("1234", "CanalNotificacion", importance);
@@ -62,14 +63,16 @@ public class MainActivity extends AppCompatActivity {
         //Pedimos el canal creado anteriormente
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "1234")
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentTitle("Notificacion")
+                .setContentTitle("Notificacion!!!")
                 .setContentText("Mensaje: " + etMensaje.getText().toString())
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        NotificationManagerCompat notificationManagerCompact =
+                NotificationManagerCompat.from(this);
 
         // Notificacion id deberia de ser unico por cada notificacion
         int notificationId = 1;
-        notificationManager.notify(notificationId, builder.build());
+        //Enviakmos la notificacion
+        notificationManagerCompact.notify(notificationId, builder.build());
     }
 }

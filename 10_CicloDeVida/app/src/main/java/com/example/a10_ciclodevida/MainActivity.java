@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     Este es el caso más básico, donde Android abre un proceso nuevo para nuestra app
 
     Lanzar una app requiere que te sitúes en el Launcher y luego presiones el icono de la misma.
-    Así que corre la aplicación y verifica en qué orden son impresos los métodos en el
+    Podemos ejecutar la app y verificar en qué orden son impresos los métodos en el
     logcat de Android Studio luego del lanzamiento. Desde Android Studio pulsaremos el boton
     de play.
 

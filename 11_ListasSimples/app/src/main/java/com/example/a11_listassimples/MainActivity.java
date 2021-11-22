@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         // manera estructurada. Arreglos, objetos List y objetos Cursor(BBDD) con usados,
         // por lo general, con conjuntos de datos.
 
-        //Un adaptador es responsable de recuperar datos desde un conjunto de datos y
-        //para generar objetos View mediante esos datos.
+        //Un adaptador es responsable de recuperar información desde un conjunto de datos y
+        //de generar objetos View mediante esos datos.
         //Los objetos View generados son usados, hasta entonces, para llenar cualquier
         //adaptador vista que esté sujeto al adaptador.
 
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         //2- El layout que vamos a utilizar para pintar los datos del array, para esto
         //android nos da una serie de layouts preestablecidos.
         //3- El conjunto de datos que queremos pintar.
-        final ArrayAdapter<String> arrayStringAdapter = new ArrayAdapter<String>(
+        final ArrayAdapter<String> arrayStringAdapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
                 arrayListPaises
@@ -106,8 +106,9 @@ public class MainActivity extends AppCompatActivity {
 
                 //La otra obteniendo el arrayAdapter a partir de la referencia parent
                 ArrayAdapter<String> arrayAdapter = (ArrayAdapter)parent.getAdapter();
-                String s = "Borrado el pais " + arrayAdapter.getItem(position);
-                arrayAdapter.remove(arrayAdapter.getItem(position));
+                String itemABorrar = arrayAdapter.getItem(position);
+                String s = "Borrado el pais " + itemABorrar;
+                arrayAdapter.remove(itemABorrar);
                 Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
 
                 //Refrescamos el adapter para que salgan los nuevos cambios

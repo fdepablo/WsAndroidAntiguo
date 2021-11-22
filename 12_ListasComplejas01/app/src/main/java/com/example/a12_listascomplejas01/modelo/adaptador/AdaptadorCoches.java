@@ -32,6 +32,9 @@ public class AdaptadorCoches extends BaseAdapter{
         this.listado = lista;
     }
 
+    //Todos estos metodos los tenemos que implementar y van a ser llamados
+    //por el ListView
+
     //Para saber el tamaño de la lista
     @Override
     public int getCount() {
@@ -40,7 +43,7 @@ public class AdaptadorCoches extends BaseAdapter{
 
     //para recuperar un item de la lista
     @Override
-    public Object getItem(int position) {
+    public Coche getItem(int position) {
         return listado.get(position);
     }
 
@@ -82,7 +85,7 @@ public class AdaptadorCoches extends BaseAdapter{
         //Comprobando si el View no existe
         if (convertView == null) {
             //Obteniendo una instancia del inflater
-            LayoutInflater inflater = (LayoutInflater)activity.getLayoutInflater();
+            LayoutInflater inflater = activity.getLayoutInflater();
             //Si no existe, entonces inflarlo con el layout con que lo inicializamos
             convertView = inflater.inflate(layout,null);
         }
@@ -90,11 +93,11 @@ public class AdaptadorCoches extends BaseAdapter{
         //Obteniendo instancias de los text views.
         //R.layout.two_line_list_item (listItemView) tiene dos TextView por defecto
         //predefinidos (text1, text2)
-        TextView marca = (TextView)convertView.findViewById(android.R.id.text1);
-        TextView modelo = (TextView)convertView.findViewById(android.R.id.text2);
+        TextView marca = convertView.findViewById(android.R.id.text1);
+        TextView modelo = convertView.findViewById(android.R.id.text2);
 
         //Obteniendo instancia del coche
-        Coche coche = (Coche)getItem(position);
+        Coche coche = getItem(position);
 
         marca.setText(coche.getMarca());
         modelo.setText(coche.getModelo());

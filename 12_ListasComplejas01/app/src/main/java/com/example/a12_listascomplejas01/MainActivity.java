@@ -60,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
         //mostrar dos elementos uno arriba y en negrita y el otro abajo
         //Podriamos crear nuestro layout personalizado en caso de que lo
         //necesitemos.
-        adaptadorCoches = new AdaptadorCoches(this,android.R.layout.two_line_list_item,listaCoches);
+        adaptadorCoches = new AdaptadorCoches(this,
+                android.R.layout.two_line_list_item,
+                listaCoches);
         //Inyectamos el adaptador a la lista
         lista.setAdapter(adaptadorCoches);
 

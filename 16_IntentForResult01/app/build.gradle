@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.a16_intentforresult"
+        applicationId 'com.example.a16_intentforresult01'
         minSdk 21
         targetSdk 31
         versionCode 1

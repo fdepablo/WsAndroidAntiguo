@@ -1,5 +1,7 @@
 package com.example.a17_rest01.modelo.entidad;
 
+//Para que la librería Gson convierta automáticamente los json a objetos
+//los atributos del json deben coincidir con los atributos del objeto
 public class Usuario {
     private int id;
     private String name;

@@ -98,15 +98,28 @@ public class MainActivity extends AppCompatActivity {
     public void obtenerListaUsuariosRest(){
         mostrarEspera();
 
-        GoRestUsuarioApiService goRestUsuarioApiService = GestorUsuario.getInstance().getGoRestUserApiService();
+        GoRestUsuarioApiService goRestUsuarioApiService =
+                GestorUsuario.getInstance().getGoRestUserApiService();
 
         Call<List<Usuario>> call = goRestUsuarioApiService.getUsuarios();
 
+        //Como no sabemos el tiempo que va a tardar en responder el servicio
+        //rest, no podemos bloquear la aplicacion movil al usuario.
+        //Por ello, debemos de hacer siempre las peticiones a servicios de manera
+        //asincrona, es decir, no bloqueamos la pantalla del movil y cuando
+        //el servidor conteste, entonces se ejecutara un determinado método.
+        //Este método se suele llamar función de callback o retro llamada
+
+        //En este ejemplo de aqui, con el método enqueue estamos haciendo
+        //la solicitud al servidio rest
         call.enqueue(new Callback<List<Usuario>>() {
+            //Este método se ejecutará cuando el servidor HTTP nos responda
+            //satisfactoriamente
             @Override
             public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
                 if (response.isSuccessful()) {
                     Log.d("Success", "Datos traidos del servicio");
+                    //Gracias a Gson, me convierte los json a objetos Usuario
                     List<Usuario> listaUsuarios = response.body();
 
                     adaptadorUsuario = new AdaptadorUsuario(listaUsuarios);
@@ -123,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                         tvVacio.setVisibility(View.GONE);
                     }
                 } else {
-                    Log.d("Error", "Something happened");
+                    Log.d("Error", response.code() + " " + response.message());
                     return;
                 }
 

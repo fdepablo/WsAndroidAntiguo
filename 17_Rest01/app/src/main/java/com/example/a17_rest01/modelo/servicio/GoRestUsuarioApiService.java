@@ -14,6 +14,8 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 /*
+Para hacer el acceso al servicio, vamos usar retrofit
+
 Debemos de crear una interfaz que será la encargada de hacer las peticiones
 Http a nuestro servicio Rest.
 

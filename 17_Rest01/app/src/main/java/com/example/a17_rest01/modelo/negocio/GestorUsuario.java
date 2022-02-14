@@ -23,12 +23,14 @@ public class GestorUsuario {
     }
 
     public void inicializar(){
+        //Tenemos que configurar Retrofit para acceder al servicio
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://gorest.co.in/public/v2/")
                 .addConverterFactory(GsonConverterFactory.create(
                         new GsonBuilder().serializeNulls().create()
                 )).build();
 
+        //Establecemos la relacion entre el servicio y Retrofit
         goRestUsuarioApiService =
                 retrofit.create(GoRestUsuarioApiService.class);
     }

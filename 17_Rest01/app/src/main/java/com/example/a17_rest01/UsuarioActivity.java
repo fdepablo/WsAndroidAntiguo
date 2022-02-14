@@ -45,7 +45,8 @@ public class UsuarioActivity extends AppCompatActivity {
     public void accederUsuario(){
         mostrarEspera();
 
-        GoRestUsuarioApiService goRestUsuarioApiService = GestorUsuario.getInstance().getGoRestUserApiService();
+        GoRestUsuarioApiService goRestUsuarioApiService =
+                GestorUsuario.getInstance().getGoRestUserApiService();
 
         Call<Usuario> llamadaAcceder = goRestUsuarioApiService.getUsuarioPorId(id);
 
@@ -68,7 +69,8 @@ public class UsuarioActivity extends AppCompatActivity {
     }
 
     public void borrarUsuario(){
-        GoRestUsuarioApiService goRestUsuarioApiService = GestorUsuario.getInstance().getGoRestUserApiService();
+        GoRestUsuarioApiService goRestUsuarioApiService =
+                GestorUsuario.getInstance().getGoRestUserApiService();
 
         Call llamadaBorrar = goRestUsuarioApiService.borrarUsuario(id);
 

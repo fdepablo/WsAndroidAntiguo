@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "601629294003",
+    "project_id": "mensajes-72c62",
+    "storage_bucket": "mensajes-72c62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601629294003:android:20ba3c091b522d10c65fc6",
+        "android_client_info": {
+          "package_name": "com.example.a18_firebase01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601629294003-5qcofahvpndedgcule3b3attfgf86qoc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_rvutER7kMdyF5dGSA8nI-ZlfFnNazkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601629294003-5qcofahvpndedgcule3b3attfgf86qoc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

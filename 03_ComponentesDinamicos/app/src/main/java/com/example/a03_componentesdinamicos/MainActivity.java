@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 //Una vez obtenido el elemento padre, le dijo que borre el objeto
                 //hijo, que en este caso sera el propio boton que desencadena
                 //el evento (v3)
+                Log.v("MainActivity", "Pulsado");
                 vg.removeView(v3);
                 return true;
             });

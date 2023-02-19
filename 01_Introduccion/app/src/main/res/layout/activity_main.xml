@@ -48,7 +48,7 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:text="Bienvenidos a nuestra APP :) :)!" />
 
     <!--
@@ -106,6 +106,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:background="@color/purple_200"
         android:textStyle="bold"
         android:textSize="28sp"
         android:id="@+id/resultadoFactorial"/>

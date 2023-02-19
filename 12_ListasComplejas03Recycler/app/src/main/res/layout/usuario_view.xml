@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="1dp"
-                android:text="Editar usuario" />
+                android:text="Detalle" />
 
             <Button
                 android:id="@+id/btnEliminarUsuario"
@@ -84,7 +84,7 @@
                 android:layout_weight="1"
                 android:layout_margin="1dp"
                 android:layout_height="wrap_content"
-                android:text="Eliminar Usuario"
+                android:text="Eliminar"
                 />
         </LinearLayout>
 

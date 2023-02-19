@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -43,11 +44,20 @@ seguir sus pasos.
 
 Nota, hay que configurar el build.gradle del proyecto con
 
-    buildscript {
-        dependencies {
-            classpath 'com.google.gms:google-services:4.3.10'
-        }
+buildscript {
+    repositories {
+        // Make sure that you have the following two repositories
+        google()  // Google's Maven repository
+
+        mavenCentral()  // Maven Central repository
+
     }
+    dependencies {
+        // Add the dependency for the Google services Gradle plugin
+        classpath 'com.google.gms:google-services:4.3.15'
+
+    }
+}
 
 Y el build.gradle del modulo con
 
@@ -57,13 +67,9 @@ Y el build.gradle del modulo con
     }
 
     dependencies{
-        // Import the Firebase BoM
-        implementation platform('com.google.firebase:firebase-bom:29.1.0')
-        implementation 'com.google.firebase:firebase-firestore'
-
-        // Add the dependency for the Firebase SDK for Google Analytics
-        // When using the BoM, don't specify versions in Firebase dependencies
-        implementation 'com.google.firebase:firebase-analytics'
+        implementation 'com.google.firebase:firebase-firestore:24.1.0'
+        implementation platform('com.google.firebase:firebase-bom:31.2.2')
+        implementation 'com.google.firebase:firebase-analytics-ktx'
     }
 
 Opción 2: Usa Firebase Assistant de Android Studio
@@ -80,7 +86,11 @@ para el producto de Firebase que selecciones.
 
 ---
 
-En este ejemplo vamos a trabajar con una Firebase DataBase
+Una vez realizada la configuración de Firebase debemos de crear una base
+de datos Firestore con la consola firebase, para ello
+
+1. Seleccionamos Firestore
+2. Agregamos una nueva base de datos de pruebas, la podemos situar en europa
 
 ---
 
@@ -97,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rvSaludos;
     ProgressDialog mDefaultDialog = null;
 
+    //Este será el nombre de la colección que daremos en la BBDD de Firebase
     public final static String COLECCION = "saludos";
 
     @Override
@@ -168,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
         if(mDefaultDialog == null){
             mDefaultDialog = new ProgressDialog(this);
             // El valor predeterminado es la forma de círculos pequeños
-            mDefaultDialog.setProgressStyle (android.app.ProgressDialog.STYLE_SPINNER);
+            mDefaultDialog.setProgressStyle (ProgressDialog.STYLE_SPINNER);
             mDefaultDialog.setMessage("Solicitando datos ...");
             mDefaultDialog.setCanceledOnTouchOutside(false);// Por defecto true
             mDefaultDialog.show();

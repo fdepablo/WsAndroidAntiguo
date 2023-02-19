@@ -41,6 +41,15 @@ public class ListaUsuarioSingleton {
         usuario.setFechaNacimiento("19/02/1995");
 
         listaUsuarios.add(usuario);
+
+        usuario = new Usuario();
+        usuario.setId(contador++);
+        usuario.setNombre("Steve Rogers");
+        usuario.setEdad(38);
+        usuario.setPeso(92.5);
+        usuario.setFechaNacimiento("09/07/1927");
+
+        listaUsuarios.add(usuario);
         System.out.println("#########################" + listaUsuarios);
     }
 

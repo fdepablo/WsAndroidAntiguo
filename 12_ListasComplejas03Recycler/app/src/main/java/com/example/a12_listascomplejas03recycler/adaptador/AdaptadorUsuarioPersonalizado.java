@@ -74,7 +74,7 @@ public class AdaptadorUsuarioPersonalizado extends RecyclerView.Adapter<Adaptado
        holder.botonEliminar.setOnClickListener(view -> {
            Toast.makeText(holder.id.getContext(), "Eliminando usuario " + sId, Toast.LENGTH_SHORT).show();
            ListaUsuarioSingleton.getInstance().borrar(listaUsuarios.get(position));
-           notifyDataSetChanged();
+           notifyDataSetChanged();//Siempre notificamos cuando cambiamos los datos de una lista
        });
    }
 

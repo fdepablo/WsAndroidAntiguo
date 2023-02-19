@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                textView.setText("Ha pulsado el boton " + contador++);
+                textView.setText("Ha pulsado el boton " + ++contador);
             }
         });
 

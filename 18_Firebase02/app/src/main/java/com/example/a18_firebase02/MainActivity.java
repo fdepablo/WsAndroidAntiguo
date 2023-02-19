@@ -19,6 +19,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.List;
 
+//Este proyecto esta incompleto
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewUser;

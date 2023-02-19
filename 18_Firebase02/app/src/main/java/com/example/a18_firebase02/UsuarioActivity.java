@@ -43,6 +43,7 @@ public class UsuarioActivity extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+        /*
         db.collection(MainActivity.COLECCION).document().set(saludo)
                 .addOnSuccessListener( documentReference -> {
                     Toast.makeText(getApplicationContext(),
@@ -56,6 +57,7 @@ public class UsuarioActivity extends AppCompatActivity {
                     cancelarEspera();
                 }
         );
+        */
     }
     public void accederUsuario(){
         mostrarEspera();
